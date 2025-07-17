@@ -7,6 +7,26 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+type Message struct {
+	ID           string `json:"id"`
+	Username     string `json:"username"`
+	Message      string `json:"message"`
+}
+
+type DtoMessage struct {
+	Username     string `json:"username"`
+	Message      string `json:"message"`
+}
+
+type Error struct {
+	Status    int    `json:"status"`
+	Message   string `json:"message"`
+}
+
+var (
+	messages []Message;
+)
+
 func main() {
 	app := fiber.New();
 	app.Get("/message", endpoints.GetAllMessages)
