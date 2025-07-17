@@ -45,4 +45,8 @@ go run .
 
 <p>Send a message</p>
 
+---
 
+> DELETE | http://localhost:8000/message/delete/{id}
+
+<p>Delete a message</p>
